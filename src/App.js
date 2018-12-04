@@ -1,28 +1,22 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-class App extends Component {
-  render() {
+import Navigation from './components/Navigation'
+
+export default class App extends React.Component {
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Navigation></Navigation>
+        <div className="container">
+          <div className="jumbotron">
+            <h1 className="display-4">Hello, world!</h1>
+            <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <hr className="my-4"/>
+            <p>It uses utility classNamees for typography and spacing to space content out within the larger container.</p>
+            <a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+          </div>
+        </div>
       </div>
-    );
+    )
   }
 }
-
-export default App;

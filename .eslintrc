@@ -1,0 +1,21 @@
+{
+  "extends": ["standard", "plugin:react/recommended"],
+  "plugins": ["react"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "jest": true,
+    "browser": true
+  },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "16.6"
+    },
+    "propWrapperFunctions": [ "forbidExtraProps" ]
+  }
+}
