@@ -17,7 +17,7 @@ class Navigation extends React.Component {
               <NavLink to='/' className='nav-link'>Home</NavLink>
             </li>
             <li className='nav-item'>
-              <NavLink to='/themes' className='nav-link'>Browse Themes</NavLink>
+              <NavLink to='/topics' className='nav-link'>Topics</NavLink>
             </li>
             <li className='nav-item'>
               <NavLink to='/about' className='nav-link'>About</NavLink>
