@@ -39,7 +39,7 @@ const config = {
   test: { },
   development: {
     mongo: {
-      uri: 'mongodb://localhost/server-dev',
+      uri: 'mongodb://localhost/forum',
       options: {
         debug: true
       }
