@@ -24,10 +24,10 @@ const config = {
     env: process.env.NODE_ENV || 'development',
     root: path.join(__dirname, '..'),
     port: process.env.PORT || 9000,
-    ip: process.env.IP || '0.0.0.0',
+    ip: process.env.IP || '127.0.0.1',
     apiRoot: process.env.API_ROOT || '',
-    masterKey: requireProcessEnv('MASTER_KEY'),
-    jwtSecret: requireProcessEnv('JWT_SECRET'),
+    masterKey: '96CAE35CE8A9B0244178BF28E4966C2CE1B8385723A96A6B838858CDD6CA0A1E', // requireProcessEnv('MASTER_KEY'),
+    jwtSecret: '79F06F8FDE333461739F220090A23CB2A79F6D714BEE100D0E4B4AF249294619', // requireProcessEnv('JWT_SECRET'),
     mongo: {
       options: {
         db: {
@@ -49,7 +49,7 @@ const config = {
     ip: process.env.IP || undefined,
     port: process.env.PORT || 8080,
     mongo: {
-      uri: process.env.MONGODB_URI || 'mongodb://localhost/server'
+      uri: process.env.MONGODB_URI || 'mongodb://localhost/forum'
     }
   }
 }

@@ -6,7 +6,9 @@ import About from './pages/About'
 import Home from './pages/Home'
 import Topics from './pages/Topics'
 import TopicDetails from './pages/TopicDetails'
-import Profile from './pages/Profile'
+// import Profile from './pages/Profile'
+import SignUp from './pages/SignUp'
+import Login from './pages/Login'
 
 export default class App extends React.Component {
   render () {
@@ -19,7 +21,8 @@ export default class App extends React.Component {
             <Route exact path='/about' component={About}></Route>
             <Route exact path='/topics' component={Topics}></Route>
             <Route exact path='/topic/:id' component={TopicDetails}></Route>
-            <Route exact path='/user/:username' component={Profile}></Route>
+            <Route exact path='/signup' component={SignUp}></Route>
+            <Route exact path='/login' component={Login}></Route>
           </Switch>
         </div>
       </div>

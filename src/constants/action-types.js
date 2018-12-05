@@ -1,1 +1,2 @@
 export const ADD_ARTICLE = 'ADD_ARTICLE'
+export const REGISTER_USER = 'REGISTER_USER'
