@@ -11,7 +11,7 @@
     "lint:fix": "./node_modules/.bin/eslint . --fix",
     "server": "cd server && yarn dev"
   },
-  "proxy": "http://localhost:9000/",
+  "proxy": "http://localhost:3333/",
   "browserslist": [
     ">0.2%",
     "not dead",
