@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 // import { connect } from 'react-redux'
 // import autoBind from 'react-autobind'
 
@@ -11,7 +12,7 @@ class Home extends React.Component {
           <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
           <hr className="my-4"/>
           <p>It uses utility classNamees for typography and spacing to space content out within the larger container.</p>
-          <a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+          <NavLink to='about' className="btn btn-primary btn-lg" role="button">Learn more</NavLink>
         </div>
       </div>
     )

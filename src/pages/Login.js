@@ -3,24 +3,36 @@ import autoBind from 'react-autobind'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
-import { registerUser } from '../actions/'
+import { registerUser } from '../actions/users'
 
-const mapDispatchToProps = dispatch => {
-  return {
-    registerUser: user => dispatch(registerUser(user))
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  registerUser: user => dispatch(registerUser(user))
+})
+
+const mapStateToProps = state => ({
+  result: state
+})
 
 class Login extends React.Component {
   constructor () {
     super()
     autoBind(this)
+    this.state = {
+      username: '',
+      password: ''
+    }
   }
 
-  handleSubmit () {
-    this.props.registerUser({
-      name: 123
+  async handleSubmit (event) {
+    event.preventDefault()
+    await this.props.registerUser({
+      name: this.state.username,
+      password: this.state.password
     })
+  }
+
+  handleChange (event) {
+    this.setState({ [event.target.name]: event.target.value })
   }
 
   render () {
@@ -29,11 +41,11 @@ class Login extends React.Component {
         <h1>Login</h1>
         <FormGroup>
           <Label>Username</Label>
-          <Input type='text' name='username' placeholder='Enter username' />
+          <Input type='text' name='username' value={this.state.username} placeholder='Enter username' onChange={this.handleChange} />
         </FormGroup>
         <FormGroup>
           <Label>Password</Label>
-          <Input type='password' name='password' placeholder='Enter password' />
+          <Input type='password' name='password' value={this.state.password} placeholder='Enter password' onChange={this.handleChange}/>
         </FormGroup>
         <Button color='secondary' type='submit'>Login</Button>
       </Form>
@@ -45,4 +57,4 @@ Login.propTypes = {
   registerUser: PropTypes.func
 }
 
-export default connect(null, mapDispatchToProps)(Login)
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

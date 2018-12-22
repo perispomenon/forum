@@ -1,15 +1,16 @@
-import axios from 'axios'
-import { REGISTER_USER } from '../constants/action-types'
-import masterKey from '../config'
+import * as actionTypes from '../constants/action-types'
 
 const initialState = {
-  result: 0
+  response: null
 }
 
-const registerUser = async (state = initialState, action) => {
-  console.log(masterKey)
-  const rsp = await axios.post('users', { ...action.payload, access_token: masterKey })
-  console.log(rsp)
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case actionTypes.REGISTER_USER_SUCCESS:
+      return { ...state, err: action.response }
+    case actionTypes.REGISTER_USER_FAILURE:
+      return { ...state, err: action.response }
+    default:
+      return state
+  }
 }
-
-export default registerUser
