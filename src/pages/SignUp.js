@@ -33,8 +33,6 @@ class SignUp extends React.Component {
       email: this.state.email,
       password: this.state.password
     })
-
-    console.log(this.props.response)
   }
 
   handleChange (event) {
